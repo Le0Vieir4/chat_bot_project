@@ -1,0 +1,14 @@
+<botcomponent schemaname="cr804_leosRestaurant.topic.Signin.pt-BR">
+  <componenttype>10</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <language>1046</language>
+  <name>Sign in  (pt-BR)</name>
+  <parentbotcomponentid>
+    <schemaname>cr804_leosRestaurant.topic.Signin</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>cr804_leosRestaurant</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

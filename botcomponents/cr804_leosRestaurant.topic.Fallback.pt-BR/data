@@ -1,0 +1,13 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnknownIntent
+  id: main
+  actions:
+    - kind: ConditionGroup
+      id: conditionGroup_LktzXw
+      conditions:
+        - id: conditionItem_tlGIVo
+          actions:
+            - kind: SendActivity
+              id: sendMessage_QZreqo
+              activity: Desculpe, não tenho certeza de como ajudar com isso. voçê poderia ser mais especifico?

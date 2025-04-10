@@ -1,0 +1,6 @@
+kind: Variable
+name: VarClientPreference
+scope: User
+isExternalInitializationAllowed: false
+initializationTimeoutInMilliseconds: 0
+aIVisibility: Hidden

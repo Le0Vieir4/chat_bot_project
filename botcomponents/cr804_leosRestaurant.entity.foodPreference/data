@@ -1,0 +1,79 @@
+kind: ClosedListEntity
+smartMatchingEnabled: true
+items:
+  - id: Ns9ZBR
+    displayName: Fast Food
+    synonyms:
+      - sanduiche
+      - cachorro quente
+      - milk shake
+      - batata frita
+      - hamburger
+
+  - id: uyiIBV
+    displayName: Jantar casual
+    synonyms:
+      - restaurante
+      - cardapio
+      - pratos
+      - a la carte
+
+  - id: 8f1PFg
+    displayName: Jantar luxuoso
+    synonyms:
+      - luxo
+      - pratos caros
+      - caro
+
+  - id: N3L8k9
+    displayName: Comida caseira
+
+  - id: HenQ07
+    displayName: Bistro
+    synonyms:
+      - aconchegante
+      - massas
+      - frances
+
+  - id: gwfU0e
+    displayName: Churrasco
+    synonyms:
+      - rodizio de carnes
+      - churrascaria
+      - bifes
+      - carne
+
+  - id: PMxvtZ
+    displayName: Cafeteria
+    synonyms:
+      - pao de queijo
+      - cafe da manha
+      - cafe
+
+  - id: DQvxg6
+    displayName: Restaurante com self-service
+
+  - id: T5Ipoy
+    displayName: Rodizios
+
+  - id: d0h5fK
+    displayName: Comida japonesa
+    synonyms:
+      - yakisoba
+      - sushi
+      - japones
+
+  - id: rneJdc
+    displayName: Pizzaria
+    synonyms:
+      - rodizio
+      - pizza doce
+      - pizza
+
+  - id: p34pX3
+    displayName: massa
+    synonyms:
+      - croassant
+      - pães
+      - macarrao
+      - italiana

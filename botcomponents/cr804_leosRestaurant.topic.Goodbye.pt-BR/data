@@ -1,0 +1,29 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Goodbye
+    triggerQueries:
+      - Bye
+      - Bye for now
+      - Bye now
+      - Good bye
+      - No thank you. Goodbye.
+      - See you later
+      - tchau
+      - sair
+
+  actions:
+    - kind: Question
+      id: question_zf2HhP
+      prompt: Você gostaria de encerrar nossa conversa?
+
+    - kind: ConditionGroup
+      id: condition_DGc1Wy
+      conditions:
+        - id: condition_DGc1Wy-item-1
+          actions:
+            - kind: SendActivity
+              id: sendMessage_LdLhmf
+              activity: Vá em frente. Estou ouvindo.

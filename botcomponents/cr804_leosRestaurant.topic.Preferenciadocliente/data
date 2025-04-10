@@ -1,0 +1,138 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRedirect
+  id: main
+  actions:
+    - kind: Question
+      id: question_0ovu4k
+      interruptionPolicy:
+        allowInterruption: true
+
+      alwaysPrompt: true
+      variable: init:Topic.VarCity
+      prompt: por favor digite a sua cidade?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: question_gco0yA
+      interruptionPolicy:
+        allowInterruption: true
+
+      alwaysPrompt: true
+      variable: init:Global.VarClientPreference
+      prompt: e qual seria a sua preferencia por comida?
+      entity:
+        kind: ClosedListEntityReference
+        entityId: cr804_leosRestaurant.entity.foodPreference
+        selectedItems:
+          - Ns9ZBR
+          - uyiIBV
+          - 8f1PFg
+          - N3L8k9
+          - HenQ07
+          - gwfU0e
+          - PMxvtZ
+          - DQvxg6
+          - T5Ipoy
+          - d0h5fK
+          - rneJdc
+          - p34pX3
+
+    - kind: ConditionGroup
+      id: conditionGroup_HJsU0X
+      conditions:
+        - id: conditionItem_P4d2bg
+          condition: =IsBlank(Global.VarClientPreference) && Global.VarClientPreference <> Global.VarClientPreference
+          actions:
+            - kind: SendActivity
+              id: sendActivity_2EC897
+              activity: por favor selecione uma das opções, para que possamos buscar o restaurante perfeito para voçe.
+
+            - kind: GotoAction
+              id: SrXsjk
+              actionId: question_gco0yA
+
+        - id: conditionItem_AHYZk0
+          condition: =IsBlank(Topic.VarCity)
+          actions:
+            - kind: SendActivity
+              id: sendActivity_MQ7R9j
+              activity: por favo digite a sua cidade.
+
+            - kind: GotoAction
+              id: bYRw4o
+              actionId: question_0ovu4k
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_wMOPjr
+          activity: |-
+            Obrigado(a), vamos encontrar as melhores opções de {Global.VarClientPreference}, em
+            {Topic.VarCity} para voçê.
+
+    - kind: SearchAndSummarizeContent
+      id: ICOz8o
+      variable: Topic.VarSearchResult
+      userInput: =Topic.VarCity
+      additionalInstructions: encontre os 5 melhores restaurantes de {Global.VarClientPreference}, em {Topic.VarCity}, e também de ao cliente o endereço do restaurante é obrigatorio que o endereço possua a cidade e a sigla do estado ao qual ele pertence.
+
+    - kind: ClearAllVariables
+      id: ghkJJ2
+
+    - kind: Question
+      id: question_AFDjkv
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: Topic.VarSimOuNao
+      prompt: Gostaria de ver os outros tipos de opções de comida?
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: Sim
+              displayName: Sim
+
+            - id: Não
+              displayName: Não
+
+        displayName: EmbeddedEntity-vVDc5h
+
+    - kind: ConditionGroup
+      id: conditionGroup_HI9iq1
+      conditions:
+        - id: conditionItem_tQABzu
+          condition: =Topic.VarSimOuNao = 'cr804_leosRestaurant.topic.Preferenciadocliente.main.question_AFDjkv'.Sim
+          actions:
+            - kind: GotoAction
+              id: SUAUQH
+              actionId: question_gco0yA
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_iuWXFB
+          activity: Obrigado por utilizar nosso serviço.
+
+        - kind: EndConversation
+          id: p2Wumw
+
+inputType:
+  properties:
+    VarSimOuNao:
+      displayName: VarSimOuNao
+      type:
+        kind: EmbeddedOptionSet
+        dialogSchemaName: cr804_leosRestaurant.topic.Preferenciadocliente
+        triggerId: main
+        actionId: question_AFDjkv
+
+outputType:
+  properties:
+    VarSimOuNao:
+      displayName: VarSimOuNao
+      type:
+        kind: EmbeddedOptionSet
+        dialogSchemaName: cr804_leosRestaurant.topic.Preferenciadocliente
+        triggerId: main
+        actionId: question_AFDjkv

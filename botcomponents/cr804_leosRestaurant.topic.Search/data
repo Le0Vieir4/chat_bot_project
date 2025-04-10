@@ -1,0 +1,29 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnknownIntent
+  id: main
+  priority: -1
+  actions:
+    - kind: SearchAndSummarizeContent
+      id: search-content
+      variable: Topic.Answer
+      userInput: =System.Activity.Text
+      applyModelKnowledgeSetting: false
+
+    - kind: ConditionGroup
+      id: has-answer-conditions
+      conditions:
+        - id: has-answer
+          condition: =!IsBlank(Topic.Answer)
+          actions:
+            - kind: EndDialog
+              id: end-topic
+              clearTopicQueue: true
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_NydKyG
+          activity: |-
+            Desculpe, não entendi a sua resposta, por favor verifique se você digitou corretamente.
+            
+            Caso esteja tudo correto, por favor entrar em contato com: **(12) 11231-23123**

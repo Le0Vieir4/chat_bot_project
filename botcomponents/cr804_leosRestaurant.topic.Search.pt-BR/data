@@ -1,0 +1,14 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnknownIntent
+  id: main
+  actions:
+    - kind: ConditionGroup
+      id: has-answer-conditions
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_NydKyG
+          activity: |-
+            Desculpe, não entendi a sua resposta, por favor verifique se você digitou corretamente.
+            
+            Caso esteja tudo correto, por favor entrar em contato com: **(12) 11231-23123**

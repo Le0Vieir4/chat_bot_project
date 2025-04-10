@@ -1,0 +1,55 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRedirect
+  id: main
+  actions:
+    - kind: Question
+      id: question_0ovu4k
+      prompt: por favor digite a sua cidade?
+
+    - kind: Question
+      id: question_gco0yA
+      prompt: e qual seria a sua preferencia por comida?
+
+    - kind: ConditionGroup
+      id: conditionGroup_HJsU0X
+      conditions:
+        - id: conditionItem_P4d2bg
+          actions:
+            - kind: SendActivity
+              id: sendActivity_2EC897
+              activity: por favor selecione uma das opções, para que possamos buscar o restaurante perfeito para voçe.
+
+        - id: conditionItem_AHYZk0
+          actions:
+            - kind: SendActivity
+              id: sendActivity_MQ7R9j
+              activity: por favo digite a sua cidade.
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_wMOPjr
+          activity: |-
+            Obrigado(a), vamos encontrar as melhores opções de {Global.VarClientPreference}, em
+            {Topic.VarCity} para voçê.
+
+    - kind: Question
+      id: question_AFDjkv
+      prompt: Gostaria de ver os outros tipos de opções de comida?
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: Sim
+              displayName: Sim
+
+            - id: Não
+              displayName: Não
+
+    - kind: ConditionGroup
+      id: conditionGroup_HI9iq1
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_iuWXFB
+          activity: Obrigado por utilizar nosso serviço.

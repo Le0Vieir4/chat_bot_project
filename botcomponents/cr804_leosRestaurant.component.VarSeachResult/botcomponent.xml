@@ -1,0 +1,10 @@
+<botcomponent schemaname="cr804_leosRestaurant.component.VarSeachResult">
+  <componenttype>12</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>VarSeachResult</name>
+  <parentbotid>
+    <schemaname>cr804_leosRestaurant</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

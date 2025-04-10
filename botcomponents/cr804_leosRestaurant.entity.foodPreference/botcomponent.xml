@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr804_leosRestaurant.entity.foodPreference">
+  <componenttype>11</componenttype>
+  <description>what's food preferences the costumer have.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>food Preference</name>
+  <parentbotid>
+    <schemaname>cr804_leosRestaurant</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>
